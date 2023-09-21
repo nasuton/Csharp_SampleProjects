@@ -6,11 +6,4 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="AESEncrytDecry\**" />
-    <EmbeddedResource Remove="AESEncrytDecry\**" />
-    <None Remove="AESEncrytDecry\**" />
-  </ItemGroup>
-
 </Project>
