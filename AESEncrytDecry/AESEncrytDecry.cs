@@ -3,13 +3,6 @@ using System.Text;
 
 namespace Csharp_SampleProjects.AESEncrytDecry
 {
-    enum AESType
-    {
-        AES_128 = 0,
-        AES_192 = 1,
-        AES_256 = 2,
-    }
-
     internal class AESEncrytDecry
     {
         private string keyValue = string.Empty;
@@ -166,6 +159,19 @@ namespace Csharp_SampleProjects.AESEncrytDecry
                 }
             }
             return encrypted;
+        }
+
+        public static void Main()
+        {
+            string key = @"Testhoge0808080808080808";
+            string iv = @"HugaPiyo08080808";
+            string plainText = @"吾輩は猫であるまだ名前はない";
+            Console.WriteLine($"元の文字列：{plainText}");
+            var aes = new AESEncrytDecry(key, iv, AESType.AES_192);
+            var cipherText = aes.EncryptStringAES(plainText);
+            Console.WriteLine($"暗号化された文字列：{cipherText}");
+            plainText = aes.DecryptStringAES(cipherText);
+            Console.WriteLine($"復号化された文字列：{plainText}");
         }
     }
 }
